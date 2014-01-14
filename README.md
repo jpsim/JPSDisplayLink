@@ -1,6 +1,6 @@
 # JPSDisplayLink
 
-JPSDisplayLink provides an easy, block interface to CADisplayLink-based animations.
+JPSDisplayLink provides an easy block interface to CADisplayLink-based animations.
 
 This is ideal for animating properties that don't support UIView-based animations like font size on a UILabel or UITextView.
 
