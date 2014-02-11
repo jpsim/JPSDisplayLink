@@ -23,7 +23,7 @@ JPSDisplayLink only has one class method:
 ```objective-c
 typedef void (^JPSDisplayLinkBlock)(CGFloat progress);
 
-+ (void)runDisplayLinkBlock:(JPSDisplayLinkBlock)block duration:(CFTimeInterval)duration;
++ (void)runDisplayLinkWithDuration:(CFTimeInterval)duration block:(JPSDisplayLinkBlock)block;
 ```
 
 A JPSDisplayLink object will be created and implicitly retained for the duration specified, then it is automatically released.
@@ -37,10 +37,10 @@ Add easing to your JPSDisplayLink animations by manipulating the `progress` para
 For example, to animate a font size with cubic ease in/out, add [AHEasing](https://github.com/warrenm/AHEasing) to your project and use the following code:
 
 ```objective-c
-[JPSDisplayLink runDisplayLinkBlock:^(CGFloat progress) {
+[JPSDisplayLink runDisplayLinkWithDuration:5.0f block:^(CGFloat progress) {
     CGFloat easedProgress = CubicEaseInOut(progress);
     weakLabel.font = [UIFont boldSystemFontOfSize:12.0f + easedProgress*16.0f];
-} duration:5.0f];
+}];
 ```
 
 ### Demo

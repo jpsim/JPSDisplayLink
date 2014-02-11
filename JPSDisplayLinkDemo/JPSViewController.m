@@ -31,9 +31,9 @@
     
     // Display Link Animation
     __weak UILabel *weakLabel = label;
-    [JPSDisplayLink runDisplayLinkBlock:^(CGFloat progress) {
+    [JPSDisplayLink runDisplayLinkWithDuration:5.0f block:^(CGFloat progress) {
         weakLabel.font = [UIFont boldSystemFontOfSize:12.0f + progress*16.0f];
-    } duration:5.0f];
+    }];
 }
 
 #pragma mark - Autolayout

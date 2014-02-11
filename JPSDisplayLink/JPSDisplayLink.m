@@ -19,7 +19,12 @@
 
 @implementation JPSDisplayLink
 
-+ (void)runDisplayLinkBlock:(JPSDisplayLinkBlock)block duration:(CFTimeInterval)duration {
++ (void)runDisplayLinkBlock:(JPSDisplayLinkBlock)block duration:(CFTimeInterval)duration
+{
+    [self runDisplayLinkWithDuration:duration block:block];
+}
+
++ (void)runDisplayLinkWithDuration:(CFTimeInterval)duration block:(JPSDisplayLinkBlock)block {
     JPSDisplayLink *displayLink = [[JPSDisplayLink alloc] init];
     displayLink.block = block;
     displayLink.duration = duration;
